@@ -32,6 +32,7 @@ def apply_clearance(cart)
     produce.map { |key, value|
       
       if key == :clearance && value == true
+        puts produce[:price]
         produce[:price] = produce[:price] - ((produce[:price] * 0.2).floor / 100.0)
         puts produce[:price]
       end
