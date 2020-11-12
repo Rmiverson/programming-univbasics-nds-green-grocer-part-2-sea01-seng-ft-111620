@@ -15,7 +15,7 @@ def apply_coupons(cart, coupons)
             produce[:count] - tag[:num]
             
             cart.push({
-              :item => value +" W/COUPON",
+              :item => t_value + " W/COUPON",
               :price => tag[:cost] / tag[:num],
               :clearance => produce[:clearance],
               :count => tag[:num]
