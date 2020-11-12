@@ -1,10 +1,8 @@
 require_relative './part_1_solution.rb'
 
+require 'pry'
+
 def apply_coupons(cart, coupons)
-  # Consult README for inputs and outputs
-  #
-  # REMEMBER: This method **should** update cart
-  
   cart.map { |produce|
     produce.map { |key, value|
       
@@ -31,7 +29,7 @@ def apply_coupons(cart, coupons)
       
     }
   }
-  
+  binding.pry
   return cart
 end
 
