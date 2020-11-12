@@ -10,8 +10,6 @@ def apply_coupons(cart, coupons)
         tag.map { |t_key, t_value|
           
           if value == t_value && key == t_key
-            puts value
-            puts t_value
             produce[:count] = produce[:count] - tag[:num]
             
             cart.push({
@@ -29,6 +27,7 @@ def apply_coupons(cart, coupons)
       
     }
   }
+  puts cart
   return cart
 end
 
