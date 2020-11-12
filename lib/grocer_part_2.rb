@@ -12,7 +12,7 @@ def apply_coupons(cart, coupons)
           if value == t_value && key == t_key
             puts value
             puts t_value
-            produce[:count] - tag[:num]
+            produce[:count] = produce[:count] - tag[:num]
             
             cart.push({
               :item => t_value + " W/COUPON",
@@ -29,7 +29,6 @@ def apply_coupons(cart, coupons)
       
     }
   }
-  binding.pry
   return cart
 end
 
