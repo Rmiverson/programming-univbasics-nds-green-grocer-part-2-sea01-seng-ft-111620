@@ -27,6 +27,17 @@ def apply_clearance(cart)
   # Consult README for inputs and outputs
   #
   # REMEMBER: This method **should** update cart
+  
+  cart.map { |produce|
+    produce.map { |key, value|
+      
+      if key == :clearance && value == true
+        produce[:price] = produce[:price] * 1.2
+        
+      end
+    }
+  }
+  return cart
 end
 
 def checkout(cart, coupons)
