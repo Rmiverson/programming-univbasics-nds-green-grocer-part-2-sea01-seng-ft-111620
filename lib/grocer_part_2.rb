@@ -5,14 +5,32 @@ def apply_coupons(cart, coupons)
   #
   # REMEMBER: This method **should** update cart
   
-  cart.map { | item |
-    
+  cart.map { |produce|
     produce.map { |key, value|
       
+      coupons.map { |tag|
+        tag.map { |t_key, t_value|
+          
+          if value == t_value 
+            produce[:count] - tag[:num]
+            
+            cart.push({
+              :item => value +" W/COUPON",
+              :price => tag[:cost] / tag[:num],
+              :clearance => produce[:clearance],
+              :count => tag[:num]
+            })
+            
+          end
+          
+        }
+      }
+     
+      
     }
-    
-    
   }
+  
+  
   
 end
 
