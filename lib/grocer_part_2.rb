@@ -52,6 +52,8 @@ def checkout(cart, coupons)
     produce.map { |key, value|
       if key == :price
         cart_total = cart_total + value
+        puts cart_total
+        puts produce[:item]
       end
     }
   }
