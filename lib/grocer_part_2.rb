@@ -27,7 +27,7 @@ def apply_clearance(cart)
   cart.map { |produce|
     produce.map { |key, value|
       if key == :clearance && value == true
-        produce[:price] = produce[:price] - ((produce[:price] * 0.2).floor(2))
+        produce[:price] = produce[:price] - ((produce[:price] * 0.2).round(2))
       end
     }
   }
@@ -57,7 +57,7 @@ def checkout(cart, coupons)
   }
   
   if cart_total > 100 
-    cart_total = cart_total - ((cart_total * 0.1).floor(2))
+    cart_total = cart_total - ((cart_total * 0.1).round(2))
   end
   
   return cart_total
