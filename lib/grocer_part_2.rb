@@ -47,7 +47,7 @@ def checkout(cart, coupons)
   # BEFORE it begins the work of calculating the total (or else you might have
   # some irritated customers
   
-  new_cart = apply_clearance(apply_coupons(consolidate_cart(cart)), coupons)
+  new_cart = apply_clearance(apply_coupons(consolidate_cart(cart), coupons))
   cart_total = 0.0
   
   new_cart.map { |produce|
