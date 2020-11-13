@@ -52,7 +52,7 @@ def checkout(cart, coupons)
   
   new_cart.map { |produce|
     produce.map { |key, value|
-      if key == price
+      if key == :price
         cart_total = cart_total + value
       end
     }
