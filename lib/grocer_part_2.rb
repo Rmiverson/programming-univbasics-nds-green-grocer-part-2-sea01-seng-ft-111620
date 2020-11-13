@@ -48,14 +48,7 @@ def checkout(cart, coupons)
   new_cart = apply_clearance(apply_coupons(consolidate_cart(cart), coupons))
   cart_total = 0.0
   
-  coupons.map { |tag|
-    tag.map { |t_key, t_value|
-      if t_key == :num && t_value == 0
-        new_cart = apply_clearance(consolidate_cart(cart))
-      end
-    }
-  }
-
+  
   
   new_cart.map { |produce|
     produce.map { |key, value|
@@ -69,6 +62,8 @@ def checkout(cart, coupons)
     cart_total = cart_total - ((cart_total * 0.1).round(2))
   end
   
+  puts cart
+  puts coupons
   puts cart_total
   return cart_total
 end
