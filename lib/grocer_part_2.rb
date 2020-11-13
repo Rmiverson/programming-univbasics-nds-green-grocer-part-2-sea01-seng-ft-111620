@@ -48,6 +48,10 @@ def checkout(cart, coupons)
   new_cart = apply_clearance(apply_coupons(consolidate_cart(cart), coupons))
   cart_total = 0.0
   
+  coupons.map { |tag|
+    
+  }
+  
   new_cart.map { |produce|
     produce.map { |key, value|
       if key == :price
