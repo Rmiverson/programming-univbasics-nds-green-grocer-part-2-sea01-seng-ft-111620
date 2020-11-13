@@ -50,12 +50,12 @@ def checkout(cart, coupons)
   
   coupons.map { |tag|
     tag.map { |t_key, t_value|
-      
-    }
-  }
-  if coupons[:num] == 0
+        if coupons[:num] == 0
     new_cart = apply_clearance(consolidate_cart(cart))
   end
+    }
+  }
+
   
   new_cart.map { |produce|
     produce.map { |key, value|
