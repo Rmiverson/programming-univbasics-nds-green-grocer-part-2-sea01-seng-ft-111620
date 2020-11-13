@@ -45,12 +45,9 @@ def checkout(cart, coupons)
   # BEFORE it begins the work of calculating the total (or else you might have
   # some irritated customers
   
-  new_cart = apply_clearance(apply_coupons(consolidate_cart(cart), coupons))
+  new_cart = apply_clearance(apply_coupons(consolidate_cart(cart), coupons.uniq))
   cart_total = 0.0
   
-  coupons.map { |tag|
-    
-  }
   
   new_cart.map { |produce|
     produce.map { |key, value|
