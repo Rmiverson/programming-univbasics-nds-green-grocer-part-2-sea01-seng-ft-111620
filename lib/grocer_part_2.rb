@@ -48,16 +48,17 @@ def checkout(cart, coupons)
   new_cart = apply_clearance(apply_coupons(consolidate_cart(cart), coupons))
   cart_total = 0.0
   
-  puts new_cart
-  
   new_cart.map { |produce|
     produce.map { |key, value|
       if key == :price
         cart_total = cart_total + (value * produce[:count])
-        puts cart_total
-        puts produce[:item]
       end
     }
   }
+  
+  if cart_total > 100 
+    cart_total = cart_total - ((cart_total * 0.1).floor(2))
+  end
+  
   return cart_total
 end
