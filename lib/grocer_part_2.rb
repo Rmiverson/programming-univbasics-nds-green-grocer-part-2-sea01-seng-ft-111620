@@ -35,19 +35,8 @@ def apply_clearance(cart)
 end
 
 def checkout(cart, coupons)
-  # Consult README for inputs and outputs
-  #
-  # This method should call
-  # * consolidate_cart
-  # * apply_coupons
-  # * apply_clearance
-  #
-  # BEFORE it begins the work of calculating the total (or else you might have
-  # some irritated customers
-  
   new_cart = apply_clearance(apply_coupons(consolidate_cart(cart), coupons.uniq))
   cart_total = 0.0
-  
   
   new_cart.map { |produce|
     produce.map { |key, value|
@@ -60,9 +49,6 @@ def checkout(cart, coupons)
   if cart_total > 100 
     cart_total = cart_total - ((cart_total * 0.1).round(2))
   end
-  
-  puts consolidate_cart(cart)
-  puts coupons[0]
-  puts cart_total
+
   return cart_total
 end
