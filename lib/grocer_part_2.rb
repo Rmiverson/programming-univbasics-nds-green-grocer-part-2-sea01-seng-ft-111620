@@ -1,7 +1,5 @@
 require_relative './part_1_solution.rb'
 
-require 'pry'
-
 def apply_coupons(cart, coupons)
   cart.map { |produce|
     produce.map { |key, value|
