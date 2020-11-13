@@ -48,7 +48,7 @@ def checkout(cart, coupons)
   new_cart = apply_clearance(apply_coupons(consolidate_cart(cart), coupons))
   cart_total = 0.0
   
-  puts cart
+  puts consolidate_cart(cart)
   puts coupons
   
   new_cart.map { |produce|
@@ -63,8 +63,6 @@ def checkout(cart, coupons)
     cart_total = cart_total - ((cart_total * 0.1).round(2))
   end
   
-  puts cart
-  puts coupons
   puts cart_total
   return cart_total
 end
