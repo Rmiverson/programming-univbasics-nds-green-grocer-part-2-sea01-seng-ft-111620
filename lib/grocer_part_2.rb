@@ -63,8 +63,7 @@ def checkout(cart, coupons)
     cart_total = cart_total - ((cart_total * 0.1).round(2))
   end
   
-  puts cart
-  puts coupons
+
   puts cart_total
   return cart_total
 end
