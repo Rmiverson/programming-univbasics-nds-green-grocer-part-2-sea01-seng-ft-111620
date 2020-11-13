@@ -43,10 +43,8 @@ def checkout(cart, coupons)
       end
     }
   }
-  
   if cart_total > 100 
     cart_total = cart_total - ((cart_total * 0.1).round(2))
   end
-
   return cart_total
 end
